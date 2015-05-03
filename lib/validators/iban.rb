@@ -1,6 +1,6 @@
 class Iban
 
-  def valid?(iban)
+  def self.valid?(iban)
 
     @iban = iban.to_s
 
@@ -16,7 +16,7 @@ class Iban
 
   end
 
-  def char_to_numbers(char)
+  def self.char_to_numbers(char)
 
     # iban characters to number transformation table
     #
