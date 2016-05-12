@@ -31,6 +31,7 @@ build/
 # .ruby-version
 # .ruby-gemset
 /info
-
+/.idea
+/projectFilesBackup
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
