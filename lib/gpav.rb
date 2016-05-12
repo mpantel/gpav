@@ -1,7 +1,9 @@
-require 'validators/afm'
-require 'validators/amka'
-require 'validators/cheque'
-require 'validators/iban'
+require "gpav/version"
+
+require 'gpav/validators/afm'
+require 'gpav/validators/amka'
+require 'gpav/validators/cheque'
+require 'gpav/validators/iban'
 module Gpav
 
 end

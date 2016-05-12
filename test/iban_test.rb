@@ -1,7 +1,6 @@
-require 'minitest/autorun'
-require File.expand_path(File.dirname(__FILE__)) + '/../lib/validators/iban'
+require 'test_helper'
 
-class TestIban < Minitest::Unit::TestCase
+class TestIban < Minitest::Test
   include Gpav::Validators
 
   def test_valid_iban_validation

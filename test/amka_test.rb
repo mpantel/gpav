@@ -1,7 +1,6 @@
-require 'minitest/autorun'
-require File.expand_path(File.dirname(__FILE__)) + '/../lib/validators/amka'
+require 'test_helper'
 
-class TestAmka < Minitest::Unit::TestCase
+class TestAmka < Minitest::Test
   include Gpav::Validators
 
   def test_valid_amka_validation

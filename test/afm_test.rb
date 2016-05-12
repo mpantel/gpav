@@ -1,7 +1,6 @@
-require 'minitest/autorun'
-require File.expand_path(File.dirname(__FILE__)) + '/../lib/validators/afm'
+require 'test_helper'
 
-class TestAfm < Minitest::Unit::TestCase
+class TestAfm < Minitest::Test
   include Gpav::Validators
 
   def test_valid_afm_validation

@@ -1,7 +1,6 @@
-require 'minitest/autorun'
-require File.expand_path(File.dirname(__FILE__)) + '/../lib/validators/cheque'
+require 'test_helper'
 
-class TestCheque < Minitest::Unit::TestCase
+class TestCheque < Minitest::Test
   include Gpav::Validators
 
   def test_valid_cheque_validation
