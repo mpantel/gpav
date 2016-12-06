@@ -7,6 +7,13 @@ class TestIban < Minitest::Test
     valid_iban = %w(GR9401406010601002001000246 GR5401406010601002001000190 GR9101406010601002001000300 GR9001406010601002001000318 GR0701406010601002001001812)
     valid_iban.each do |a|
       assert Iban.valid?(a), "IBAN verification failed: #{a}"
+      assert Iban.valid?(a,'014'), "IBAN verification failed: #{a}, 014"
+    end
+    end
+  def test_invalid_iban_with_code_validation
+    valid_iban = %w(GR9401406010601002001000246 GR5401406010601002001000190 GR9101406010601002001000300 GR9001406010601002001000318 GR0701406010601002001001812)
+    valid_iban.each do |a|
+      refute Iban.valid?(a,'010'), "Invalid IBAN wrong verification: #{a}, 010"
     end
   end
 
@@ -14,6 +21,7 @@ class TestIban < Minitest::Test
     invalid_iban = %w(DR9401406010601002001000246 GF5401406010601002001000190 GR9101406010631002001000300 GR9001406010601002001400318 GR0701406010601002001001814)
     invalid_iban.each do |a|
       refute Iban.valid?(a), "Invalid IBAN wrong verification: #{a}"
+      refute Iban.valid?(a,'014'), "Invalid IBAN wrong verification: #{a}, 014"
     end
   end
 

@@ -3,7 +3,7 @@ module Gpav
     class Iban
 
 
-      def self.valid?(iban)
+      def self.valid?(iban,bank_code=nil)
 
         @iban = iban.to_s
 
@@ -11,11 +11,13 @@ module Gpav
         return false unless @iban =~ /\A[a-zA-Z]{2}[0-9]{25}\Z/
 
 
+        # bank_code trhee digits : @iban[4..6]
+
         # rotate 4
         #change letters to numbers: A=10 --> Z=35
         #divide with 97 mod == 1
 
-        (@iban[4..27] + char_to_numbers(@iban[0]) + char_to_numbers(@iban[1]) + @iban[2..3]).to_i % 97 == 1
+        (@iban[4..27] + char_to_numbers(@iban[0]) + char_to_numbers(@iban[1]) + @iban[2..3]).to_i % 97 == 1 && (bank_code.nil? || bank_code == @iban[4..6])
 
       end
 
